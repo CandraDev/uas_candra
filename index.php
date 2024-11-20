@@ -120,66 +120,74 @@
             $karyawan->hasGaji($_POST['bpjs'], $_POST['tgl_gaji'], $_POST['pinjaman'], $_POST['cicilan'], $_POST['infaq']);
         ?>
 
-        <section class="container my-5">
-            <div class="card w-50 mx-auto border border-primary border-2">
-                <div class="card-header h5 fw-bold text-center">
-                    <?= $karyawan->getData('nama'); ?>
+            <section class="container my-5">
+                <div class="card w-50 mx-auto border border-primary border-2">
+                    <div class="card-header h5 fw-bold text-center">
+                        <?= $karyawan->getData('nama'); ?>
+                    </div>
+                    <div class="card-body mx-5 text-primary">
+                        <h5 class="text-center fw-semibold">STRUK GAJI</h5>
+                        <table class="w-75 mx-auto">
+                            <tr>
+                                <td>No</td>
+                                <td>: <?= $karyawan->getData('no'); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>: <?= $karyawan->getData('nama'); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Unit Pendidikan</td>
+                                <td>: <?= $karyawan->getData('unitPendidikan'); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Gaji</td>
+                                <td>: <?= date_format($karyawan->getData('tglGaji'), "j F Y") ?></td>
+                            </tr>
+                            <tr>
+                                <td>Jabatan</td>
+                                <td>: <?= $karyawan->getData('jabatan'); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Gaji</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('gaji')); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Lama Kerja</td>
+                                <td>: <?= $karyawan->getData('lamaKerja'); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Status Kerja</td>
+                                <td>: <?= $karyawan->getData('statusKerja'); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Bonus</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('bonus')); ?></td>
+                            </tr>
+                            <tr>
+                                <td>BPJS</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('bpjs')); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Pinjaman</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('pinjaman')); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Cicilan</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('cicilan')); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Infaq</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('infaq')); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Gaji Bersih</td>
+                                <td>: <?= Utilities::toRupiah($karyawan->getData('gajiBersih')); ?></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="card-body mx-5 text-primary">
-                    <h5 class="text-center fw-semibold">STRUK GAJI</h5>
-                    <table class="w-75 mx-auto">
-                        <tr>
-                            <td>No</td>
-                            <td>: <?= $karyawan->getData('no'); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Nama</td>
-                            <td>: <?= $karyawan->getData('nama'); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Unit Pendidikan</td>
-                            <td>: <?= $karyawan->getData('unitPendidikan'); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Tanggal Gaji</td>
-                            <td>: <?= date_format($karyawan->getData('tglGaji'), "j F Y") ?></td>
-                        </tr>
-                        <tr>
-                            <td>Lama Kerja</td>
-                            <td>: <?= $karyawan->getData('lamaKerja'); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Status Kerja</td>
-                            <td>: <?= $karyawan->getData('statusKerja'); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Bonus</td>
-                            <td>: <?= Utilities::toRupiah($karyawan->getData('bonus')); ?></td>
-                        </tr>
-                        <tr>
-                            <td>BPJS</td>
-                            <td>: <?= Utilities::toRupiah($karyawan->getData('bpjs')); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Pinjaman</td>
-                            <td>: <?= Utilities::toRupiah($karyawan->getData('pinjaman')); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Cicilan</td>
-                            <td>: <?= Utilities::toRupiah($karyawan->getData('cicilan')); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Infaq</td>
-                            <td>: <?= Utilities::toRupiah($karyawan->getData('infaq')); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Gaji Bersih</td>
-                            <td>: <?= Utilities::toRupiah($karyawan->getData('gajiBersih')); ?></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <?php endif; ?>
     </div>
